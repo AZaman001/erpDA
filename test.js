@@ -16,16 +16,18 @@ function test(){
     };
 
     request.get(options, function(error, response, body){
-
-        body =  JSON.parse(JSON.stringify(body));
+        
+        body =  JSON.parse(body.toString());
+        //body =  JSON.parse(JSON.stringify(body));
         
         done1 = true;
 
-        res = body;
+        res = `Puchase Order ID: ${body.POHeaderId}\nOrderNumber: ${body.OrderNumber}\nBuyer: ${body.Buyer}\nSupplier: ${body.Supplier}\nTotal: ${body.Total}\nDescription: ${body.Description}`;
         
     });
     require('deasync').loopWhile(function(){return !done1;});
-        console.log(res);
+    
+    console.log(res);
 }
 
 test();
