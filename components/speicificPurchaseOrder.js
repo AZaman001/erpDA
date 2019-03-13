@@ -4,7 +4,7 @@ var request = require("request");
 
 module.exports  = {
   metadata: () => ({
-        "name": "erp",
+        "name": "specificPurchaseOrder",
         "properties": {},
         "supportedActions": []
     }),
