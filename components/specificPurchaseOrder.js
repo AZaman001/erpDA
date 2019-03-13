@@ -5,17 +5,20 @@ var request = require("request");
 module.exports  = {
   metadata: () => ({
         "name": "specificPurchaseOrder",
-        "properties": {},
+        "properties": {
+            POID: { required: true, type: 'int' },
+          },
         "supportedActions": []
     }),
 
     invoke: (conversation, done) =>{
       var done1 = false
       var res = ''
+      const { POID } = conversation.properties();
 
       var options = {
           method: 'GET',
-          url: "https://adc4-zazf-fa-ext.oracledemos.com/fscmRestApi/resources/11.13.18.05/purchaseOrders/1904",
+          url: `https://adc4-zazf-fa-ext.oracledemos.com/fscmRestApi/resources/11.13.18.05/purchaseOrders/${POID}`,
           headers: {
               'Content-Type': 'application/json',
               'Authorization': 'Basic Y2FsdmluLnJvdGg6VkZpMzg5NTc=',
