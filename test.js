@@ -6,7 +6,7 @@ function test(){
 
         var options = {
             method: 'GET',
-            url: "https://adc4-zazf-fa-ext.oracledemos.com/fscmRestApi/resources/11.13.18.05/purchaseOrders/1904",
+            url: "https://adc4-zazf-fa-ext.oracledemos.com/fscmRestApi/resources/11.13.18.05/purchaseOrders",
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Basic Y2FsdmluLnJvdGg6VkZpMzg5NTc=',
@@ -16,7 +16,6 @@ function test(){
 
         request.get(options, function(error, response, body){
 
-            //body =  JSON.parse(body.toString());
             body =  JSON.parse(JSON.stringify(body));
             
             done1 = true;
