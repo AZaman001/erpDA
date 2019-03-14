@@ -29,7 +29,6 @@ module.exports  = {
         request.get(options, function(error, response, body){
             
             body =  JSON.parse(body.toString());
-            //body =  JSON.parse(JSON.stringify(body));
             
             done1 = true;
     
